@@ -18,7 +18,7 @@ public class EventRepository {
     }
 
     public void storeEvent(EventDto eventDto) {
-        String sql = "INSERT INTO EVENT (`id`, `event_name`, `price`) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO EVENTS (`id`, `event_name`, `price`) VALUES (?, ?, ?)";
 
         jdbc.update(sql,
                 UUID.randomUUID(),
@@ -28,7 +28,7 @@ public class EventRepository {
     }
 
     public List<Event> findAllEvents() {
-        String sql = "SELECT * FROM EVENT";
+        String sql = "SELECT * FROM EVENTS";
 
         RowMapper<Event> eventRowMapper = (r, i) -> {
             Event rowObject = new Event();
