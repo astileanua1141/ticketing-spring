@@ -7,6 +7,9 @@ public class Event {
     String eventId;
     String eventName;
     BigDecimal price;
+    Integer capacity;
+    Integer availableCapacity;
+    Boolean isSoldOut;
 
     public String getEventId() {
         return eventId;
@@ -30,6 +33,30 @@ public class Event {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    public Integer getAvailableCapacity() {
+        return availableCapacity;
+    }
+
+    public void setAvailableCapacity(Integer availableCapacity) {
+        this.availableCapacity = availableCapacity;
+    }
+
+    public Boolean getSoldOut() {
+        return isSoldOut;
+    }
+
+    public void setSoldOut(Boolean soldOut) {
+        isSoldOut = soldOut;
     }
 }
 

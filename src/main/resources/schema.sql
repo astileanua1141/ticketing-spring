@@ -2,7 +2,19 @@
     CREATE TABLE IF NOT EXISTS events (
         id VARCHAR(36) PRIMARY KEY,
         event_name VARCHAR(50) NOT NULL,
-        price double NOT NULL
+        price double NOT NULL,
+        capacity int NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS event_meta (
+        id VARCHAR(36) PRIMARY KEY,
+        event_id varchar(36),
+        row_key VARCHAR(50) NOT NULL ,
+        row_value VARCHAR(50),
+
+        CONSTRAINT fk_event_meta
+            FOREIGN KEY (event_id)
+            REFERENCES events(id)
     );
 
     CREATE TABLE IF NOT EXISTS tickets (
